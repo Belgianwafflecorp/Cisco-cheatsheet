@@ -7,7 +7,6 @@ Router> enable
 
 ### Enter Global Configuration Mode:
 ```
-
 Router# configure terminal
 ```
 
@@ -18,12 +17,19 @@ Router(config)# hostname [MyRouter]
 ```
 
 ### Secure user EXEC mode:
+(Console line password)
 ```
 Router(config)#line console 0
 
 Router(config-line)#password [password]
 
 Router(config-line)#login
+```
+
+### privileged EXEC mode password:
+(Encrypted version)
+```
+Router(config)# enable secret [password]
 ```
 
 ### Secure remote Telnet / SSH access:
@@ -90,6 +96,8 @@ MyRouter(config)# username [admin] privilege 15 secret [adminpassword]
 ```
 Pls do not use admin and adminpassword as username and password.
 
+Privilege Lv 15 is the highest.
+
 ### Configure the VTY Lines for SSH:
 (Enable the VTY lines to use the local username and password for authentication and to only accept SSH connections)
 ```
@@ -100,6 +108,28 @@ MyRouter(config-line)# login local
 MyRouter(config-line)# transport input ssh
 
 MyRouter(config-line)# exit
+```
+
+### To create a user account with an encrypted password:
+```
+Router(config)# username [username] secret [password]
+```
+
+### SSH Configuration (using local usernames for authentication):
+```
+Router(config)# ip domain-name example.com
+
+Router(config)# crypto key generate rsa modulus 2048
+
+Router(config)# ip ssh version 2
+
+Router(config)# username YOUR_USERNAME secret YOUR_PASSWORD
+
+Router(config)# line vty 0 4
+
+Router(config-line)# transport input ssh
+
+Router(config-line)# login local
 ```
 
 ### Save the Configuration:
