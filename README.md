@@ -3,4 +3,7 @@ Basic Cisco router and switch CLI commands cheatsheet.
 
 Everything between "[ ]" needs to be changed to your own needs.
 
+If you find any incomplete information, please do not hesitate to create an issue.
 
+
+>*Networking is the art of connecting devices to enable seamless communication. As Cisco says, 'Changing the way we work, live, play, and learn.*
