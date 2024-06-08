@@ -41,6 +41,10 @@ switch(config-if)# ipv6 enable
 switch(config-if)# no shutdown
 ```
 
+### default-gateway (router):
+```
+switch(config)#ip default-gateway [192.168.0.254]
+```
 
 ## Enable SSH on the Switch
 
