@@ -52,7 +52,7 @@ MySwitch(config)# ip domain-name [MyDomain.com]
 ### Generate RSA keys with a modulus of 2048 bits:
 (More info about the keys in the router file)
 ```
-MySwitch(config)# crypto key generate rsa modulus 2048
+MySwitch(config)# crypto key generate rsa general-keys modulus 2048
 ```
 
 ### Enable SSH version 2:
